@@ -1,5 +1,5 @@
 # Ants Vs. SomeBees
-![](https://github.com/timkchan/yelp_map/blob/master/icon8080/gp.png?raw=true)
+![](https://github.com/timkchan/ants/blob/master/icon8080/gp.png?raw=true)
 
 ### 1. Introduction
 In this project, we will create a __tower defense__ game called __Ants Vs. SomeBees__. As the ant queen, we populate our colony with the bravest ants we can muster. Our ants must protect our queen from the evil bees that invade your territory. Irritate the bees enough by throwing leaves at them, and they will be vanquished. Fail to pester the airborne intruders adequately, and our queen will succumb to the bees' wrath. This game is inspired by PopCap Games' [Plants Vs. Zombies].
@@ -35,74 +35,56 @@ A game of Ants Vs. SomeBees consists of a series of turns. In each turn, new bee
 | ![Image of HarvesterAnt](https://github.com/timkchan/ants/blob/master/icon8080/bee.gif?raw=true) Bee                 |   -  |    ?   |                                                                                                                                                                                                           Enemy!                                                                                                                                                                                                          |
 
 
-
-##### Unsupervised Learning
-Restaurants tend to appear in clusters (e.g. Southside restaurants, Gourmet Ghetto). In this phase, we will devise a way to group together restaurants that are close to each other.
-
-The __k-means algorithm__ is a method for discovering the centers of clusters. It is called an unsupervised learning method because the algorithm is not told what the correct clusters are; it must infer the clusters from the data alone.
-
-The k-means algorithm finds `k` centroids within a dataset that each correspond to a cluster of inputs. To do so, k-means begins by choosing `k` centroids at random, then alternates between the following two steps:
-
-- Group the restaurants into clusters, where each cluster contains all restaurants that are closest to the same centroid.
-- Compute a new centroid (average position) for each new cluster.
-
-This [visualization] is a good way to understand how the algorithm works.
-
-
-
-#### Supervised Learning
-In this phase, we will predict what rating a user would give for a restaurant. We will implement a supervised learning algorithm that attempts to generalize from examples for which the correct rating is known, which are all of the restaurants that the user has already rated. By analyzing a user's past ratings, we can then try to predict what rating the user might give to a new restaurant.
-
-To predict ratings, we will implement __simple least-squares linear regression__, a widely used statistical method that approximates a relationship between some input feature (such as price) and an output value (the rating) with a line. The algorithm takes a sequence of input-output pairs and computes the slope and intercept of the line that minimizes the mean of the squared difference between the line and the outputs.
-
-
-
-### 3. Files
+### 4. Files
 
 Files in this project:
 
-* `abstractions.py`: Data abstractions used in the project
-* `recommend.py`: Machine learning algorithms and data processing
-* `utils.py`: Utility functions for data processing
+* `ants.py`: The game logic of Ants Vs. SomeBees
+* `ants_gui.py`: An older GUI for Ants Vs. SomeBees
+* `gui.py`: An new GUI for Ants Vs. SomeBees
+* `graphics.py`: Utilities for displaying simple two-dimensional animations
+* `state.py`: Abstraction for gamestate for `gui.py`
+* `utils.py`: Some functions to facilitate the game interface
 * `ucb.py`: Utility functions for CS 61A
-* `data`: A directory of Yelp users, restaurants, and reviews
-* `users`: A directory of user files
-* `visualize`: A directory of tools for drawing the final visualization
+* `assets`: A directory of images and files used by `gui.py`
+* `img`: A directory of images used by `ants_gui.py`
+* `icon8080`: A directory of images used by `README.md`
 
 
-### 4. Running (GUI) - Predicting your own ratings
+### 5. Running the game
 
-You can use your project to predict your own ratings too!
-
-1. In the `users` directory, you'll see a couple of `.dat` files. Copy one of them and rename the new file to `yourname.dat` (for example, `john.dat`).
-
-2. In the new file (e.g. `john.dat`), you'll see something like the following:
-    ```python
-    make_user(
-        'John DoeNero',     # name
-        [                   # reviews
-            make_review('Jasmine Thai', 4.0),
-            ...
-        ]
-    )
-    ```
-    Replace the second line with your name (as a string).
-    
-3. Replace the existing reviews with reviews of your own! You can get a list of Berkeley restaurants with the following command:
+There are 3 ways to run the game:
+1. text-based:
     ```sh
-    $ python3 recommend.py -r
+    $ python3 ants.py
     ```
-
-4. Use `recommend.py` to predict ratings for you:
+2. Python GUI;
     ```sh
-    $ python3 recommend.py -u john -k 2 -p -q Sandwiches
+    $ python3 ants_gui.py
     ```
-    (Replace `john` with your name.) Play around with the number of clusters (the `-k` option) and try different queries (with the `-q` option)!
+4. Web-based GUI (recommended)
+    ```sh
+    $ python3 gui.py
+    ```
+All the methods above follow the same arguments:
+
+    usage: gui.py [-h] [-d DIFFICULTY] [-w] [--food FOOD]
     
-### 5. Class Project Site
+    Play Ants vs. SomeBees
+    
+    optional arguments:
+      -h, --help     show this help message and exit
+      -d DIFFICULTY  sets difficulty of game (easy/medium/hard/insane)
+      -w, --water    loads a full layout with water
+      --food FOOD    number of food to start with when testing
+
+e.g. 
+```sh
+$ python3 gui.py -d hard -w
+```
+
+### 6. Class Project Site
 [here]
 
 [here]: <http://61a-su15-website.github.io/proj/ants/>
 [Plants Vs. Zombies]: <http://www.popcap.com/plants-vs-zombies-1>
-[Composing Programs]: <http://composingprograms.com/>
-[visualization]: <http://tech.nitoyon.com/en/blog/2013/11/07/k-means/>
