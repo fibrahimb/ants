@@ -55,12 +55,12 @@ Files in this project:
 
 There are 3 ways to run the game:
 
-1. text-based:
+1. text-based
     ```sh
     $ python3 ants.py
     ```
 
-2. Python GUI;
+2. Python GUI
     ```sh
     $ python3 ants_gui.py
     ```
