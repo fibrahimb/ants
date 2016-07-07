@@ -33,7 +33,7 @@ A game of Ants Vs. SomeBees consists of a series of turns. In each turn, new bee
 | ![Image of HarvesterAnt](https://github.com/timkchan/ants/blob/master/icon8080/ant_tank.gif?raw=true) Tank           |   6  |    2   |                                                                                                                                                Same as `BodyGuard` and also fending off `bee`s on its own, on each turn will deal `1` `damage` to all `bee`s in its `place`                                                                                                                                               |
 | ![Image of HarvesterAnt](https://github.com/timkchan/ants/blob/master/icon8080/ant_queen.gif?raw=true) Queen         |   6  |    1   |                   The `QueenAnt` is a waterproof `ScubaThrower` that inspires her fellow ants through her bravery. The `QueenAnt` doubles the `damage` of all the ants with or behind her, updating any ants whose `damage` hasn't been buffed yet each time she performs an `action`. Once an ant's `damage` has been doubled, it should not be buffed again on subsequent turns. (Hidden Rules Apply)                   |
 | ![Image of HarvesterAnt](https://github.com/timkchan/ants/blob/master/icon8080/bee.gif?raw=true) Bee                 |   -  |    ?   |                                                                                                                                                                                                           Enemy!                                                                                                                                                                                                          |
-* Neither of these specialised throwers can `throw_at` a `Bee` that is exactly 4 `Places` away. Placing a single one of these (and no other ants) should never win a default game.
+\* Neither of these specialised throwers can `throw_at` a `Bee` that is exactly 4 `Places` away. Placing a single one of these (and no other ants) should never win a default game.
 
 ### 4. Files
 
@@ -54,18 +54,22 @@ Files in this project:
 ### 5. Running the game
 
 There are 3 ways to run the game:
+
 1. text-based:
     ```sh
     $ python3 ants.py
     ```
+
 2. Python GUI;
     ```sh
     $ python3 ants_gui.py
     ```
+
 3. Web-based GUI (recommended)
     ```sh
     $ python3 gui.py
     ```
+
 All the methods above follow the same arguments:
 
     usage: gui.py [-h] [-d DIFFICULTY] [-w] [--food FOOD]
