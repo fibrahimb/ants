@@ -1,6 +1,8 @@
 # Ants Vs. SomeBees
 ![](https://github.com/timkchan/ants/blob/master/icon8080/gp.png?raw=true)
 
+The file `ant.py` is incomplete (to prevent from plagiarism). If you would like a completed version, please email me at me@timkchan.com
+
 ### 1. Introduction
 In this project, we will create a __tower defense__ game called __Ants Vs. SomeBees__. As the ant queen, we populate our colony with the bravest ants we can muster. Our ants must protect our queen from the evil bees that invade your territory. Irritate the bees enough by throwing leaves at them, and they will be vanquished. Fail to pester the airborne intruders adequately, and our queen will succumb to the bees' wrath. This game is inspired by PopCap Games' [Plants Vs. Zombies].
 
