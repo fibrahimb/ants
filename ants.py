@@ -1,5 +1,7 @@
 """The ants module implements game logic for Ants Vs. SomeBees."""
 
+"""CS61A"""
+
 import random
 import sys
 from ucb import main, interact, trace
